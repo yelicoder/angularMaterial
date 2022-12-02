@@ -3,14 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { Table1Component } from './table1/table1.component';
+import { Table2Component } from './table2/table2.component';
+import { Table2Service } from './table2/table2.service';
 import { MatTableModule } from '@angular/material/table';
-import { Table1Service } from './table1/table1.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    Table1Component
+    Table2Component
   ],
   imports: [
     BrowserModule,
@@ -18,7 +18,7 @@ import { Table1Service } from './table1/table1.service';
     MatTableModule,
   ],
   providers: [
-    Table1Service,
+    Table2Service,
   ],
   bootstrap: [AppComponent]
 })
