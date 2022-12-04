@@ -44,10 +44,10 @@ export class Table4Service {
         const params =  new Observable <accountDisplay[]> (function subscribe (observer){
             allOperations.subscribe(([account1, account2]) => {
                 const data: accountDisplay[] = [];
-                data.push({rowHeader: 'Acct #', account1: ACCOUNT_1.accountNumber, account2: ACCOUNT_2.accountNumber});
-                data.push({rowHeader: 'Acct Short Name', account1: ACCOUNT_1.accountShortName, account2: ACCOUNT_2.accountShortName});
-                data.push({rowHeader: 'Acct description', account1: ACCOUNT_1.accountDescription, account2: ACCOUNT_2.accountDescription});
-                data.push({rowHeader: 'SSN/TIN', account1: ACCOUNT_1.SSN, account2: ACCOUNT_2.SSN});
+                data.push({rowHeader: 'Acct #', account1: account1.accountNumber, account2: account2.accountNumber});
+                data.push({rowHeader: 'Acct Short Name', account1: account1.accountShortName, account2: account2.accountShortName});
+                data.push({rowHeader: 'Acct description', account1: account1.accountDescription, account2: account2.accountDescription});
+                data.push({rowHeader: 'SSN/TIN', account1: account1.SSN, account2: account2.SSN});
                 observer.next(data);
                 observer.complete();        
             });
