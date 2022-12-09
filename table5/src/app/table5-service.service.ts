@@ -20,16 +20,16 @@ export interface accountInfo {
 })
 export class Table5Service {
 
-  SERVER_URL: string = "http://localhost:8080/api/"
+  SERVER_URL: string = "/api/accounts/"
 
   constructor(private httpClient: HttpClient) { }
 
   public getAccounts(): Observable<accountInfo[]> {
-    return this.httpClient.get<accountInfo[]>(this.SERVER_URL + 'accocunts');
+    return this.httpClient.get<accountInfo[]>(this.SERVER_URL);
   }
 
   public getAccount(accountNumber: string): Observable<accountInfo> {
-    return this.httpClient.get<accountInfo>(`${this.SERVER_URL + 'accounts'}/${accountNumber}`);
+    return this.httpClient.get<accountInfo>(this.SERVER_URL + accountNumber);
   }
 
   getData(): Observable <accountDisplay[]> {
