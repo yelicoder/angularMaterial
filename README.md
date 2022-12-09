@@ -11,9 +11,10 @@
 2. table1: get data from service
 3. table2: get array of object data from service
 4. table3: get array of object from two account information
-5. table4. get array of object as observable. The array of objects are created by two observables.
-6. table5. get array of object from http response using in memory service
-7. table6. get array of object from real http response JSON
+5. table4: get array of object as observable. The array of objects are created by two observables.
+6. table5: get array of object from http response using in memory service
+7. table6: get array of object from real http response JSON
+8. table7: use Postman mock server to simulate 200 response with error code and 404 response
 
 ## Mock Https response
 ### 1. Use angular angular-in-memory-web-api
@@ -46,10 +47,7 @@ Reference:
 
 ### Use Postman mock server
 
-You can simimulat any response.
-
-Limitation:
-Can not simulate error status code like 401, 404 etc.
+You can simimulat any response and http status code
 
 Warning: make sure the angular-in-memory-web-api dependency is removed. Otherwise the http call will be intecepted and throws 404 error
 

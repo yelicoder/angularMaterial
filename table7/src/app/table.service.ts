@@ -1,6 +1,6 @@
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, forkJoin, Observable, throwError } from 'rxjs';
+import { catchError, forkJoin, map, Observable, tap, throwError } from 'rxjs';
 import * as _ from 'lodash';
 
 export interface accountDisplay {
@@ -37,12 +37,28 @@ const ACCOUNT_1 =
     }
   }
 
+  const ErrorResponse = 
+  {
+    "errorCode": 1,
+    "errorDescription": "Someproblem",
+    "errorMessage": "There are something wrong"
+  }
+
+  const AUTH_ERROR = 
+  {
+    "Error": "SomeError",
+    "Message": "There is some error",
+    "errorcode": "SomeError",
+    "errormessage": "some error message" 
+  }
+  
+
 @Injectable({
   providedIn: 'root'
 })
 export class TableService {
 
-  SERVER_URL: string = "https://a524de66-0519-47bc-8c92-6a2199e43675.mock.pstmn.io/accounts/";
+  SERVER_URL: string = "https://4cb388da-3e5f-4c9a-b37b-36eb9819d401.mock.pstmn.io/account404/";
 
   constructor(private httpClient: HttpClient) { }
 
@@ -53,8 +69,21 @@ export class TableService {
   public getAccount(accountNumber: string): Observable<any> {
     return this.httpClient.get(this.SERVER_URL + accountNumber)
     .pipe(
+      tap(res => { 
+        console.log("errorCode=" + _.get(res, 'errorCode'))
+      }),
+      map(res => {
+        this.checkError(res);
+        return res;
+      }),
       catchError(this.handleError)
     );
+  }
+
+  public checkError(response: any){
+    if (response && !_.isNil(response.errorCode) && parseInt(response.errorCode) != 0) {
+      throw new Error(response.errorMessage);
+    } 
   }
 
   private handleError(error: HttpErrorResponse) {
