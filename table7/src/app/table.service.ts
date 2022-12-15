@@ -58,7 +58,10 @@ const ACCOUNT_1 =
 })
 export class TableService {
 
-  SERVER_URL: string = "https://4cb388da-3e5f-4c9a-b37b-36eb9819d401.mock.pstmn.io/account404/";
+  SERVER_URL: string = 
+  //"https://4cb388da-3e5f-4c9a-b37b-36eb9819d401.mock.pstmn.io/account404"
+  "https://4d1e66e9-7f29-41fc-a764-750350fd785b.mock.pstmn.io/accountErrorResponse/"
+  ;
 
   constructor(private httpClient: HttpClient) { }
 

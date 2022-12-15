@@ -15,7 +15,9 @@
 6. table5: get array of object from http response using in memory service
 7. table6: get array of object from real http response JSON
 8. table7: use Postman mock server to simulate 200 response with error code and 404 response
-9. table8: display three lines in a MAT table cell
+9. table8: display three lines in a MAT table cell. split a string to display three lines in material table. Using javascript string function and css
+10. table9: catch 404 error and handle it
+11. table10: catch 404 error and handle it and in the mean time catch the error in 200 response and handle it
 
 ## Mock Https response
 ### 1. Use angular angular-in-memory-web-api
