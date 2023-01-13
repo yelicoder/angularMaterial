@@ -6,6 +6,15 @@
 3. npm i
 4. ng serve --open
 
+## To do
+1. httpInteceptor: https://rollbar.com/blog/error-handling-with-angular-8-tips-and-best-practices/
+https://www.positronx.io/angular-error-handling-tutorial-with-examples/
+https://medium.com/angular-in-depth/expecting-the-unexpected-best-practices-for-error-handling-in-angular-21c3662ef9e4
+https://dev.to/buildmotion/angular-errorhandler-to-handle-or-not-to-handle-1e7l
+https://pkief.medium.com/global-error-handling-in-angular-ea395ce174b1
+
+2. handle error
+
 ## Projects
 1. table: get data from component
 2. table1: get data from service
@@ -17,7 +26,12 @@
 8. table7: use Postman mock server to simulate 200 response with error code and 404 response
 9. table8: display three lines in a MAT table cell. split a string to display three lines in material table. Using javascript string function and css
 10. table9: catch 404 error and handle it
-11. table10: catch 404 error and handle it and in the mean time catch the error in 200 response and handle it
+11. table10: catch 404 error and handle it and in the mean time catch the error in 200 response and handle it. In unit testing, use the following to expect an error is thrown
+```
+ expect( function() {service.checkError(errorResponse)}).toThrowError("Invalid input");
+```
+https://angular.io/guide/http#testing-http-requests
+
 
 ## Mock Https response
 ### 1. Use angular angular-in-memory-web-api
